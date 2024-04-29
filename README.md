@@ -7,9 +7,26 @@ Assists parents in finding suitable movies for children.
 
 License: MIT
 
-## Settings
+## Local Setup
+DISCLAIMER: This local setup was tested on MacOS, it should work on most Unix systems as well.
 
-Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
+### Requirements
+- [Visual Studio Code](https://code.visualstudio.com/) editor
+- [Docker](https://www.docker.com/get-started/) for your operating system
+- [Git](https://git-scm.com/downloads)
+
+### Remote Container
+
+The project is intended to be developed inside a containerized development environment using Visual Studio Code [Remote - Containers extension](https://code.visualstudio.com/docs/remote/containers). More information on how to develop using containers is available [here](https://www.youtube.com/watch?v=KFyRLxiRKAc).
+
+To use the development IDE, open the project folder with VS Code and press 'F1', then search for: 'Remote-Containers: Rebuild and Reopen in Container'.
+VS Code should reopen your IDE inside the dev container, which should make you ready to start developing!
+
+Tests should be available in the Testing tab (troubleshooting below).
+
+Rebuild and Reopen in Container should create:
+
+- A Django service on [localhost:8000](http://localhost:8000/)
 
 ## Basic Commands
 
@@ -19,20 +36,22 @@ Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings
 
       $ python manage.py createsuperuser
 
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
+-  After create superuser, retrieve the token, passing the body to the request:
+
+```
+{
+    "username": <username>,
+    "password"": <password>
+}
+```
+
+
+[POST]  ```/api/auth-token/```  
+
+
 
 ### Running tests with pytest
 
     $ pytest
 
-### Live reloading and Sass CSS compilation
 
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#sass-compilation-live-reloading).
-
-## Deployment
-
-The following details how to deploy this application.
-
-### Docker
-
-See detailed [cookiecutter-django Docker documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html).
