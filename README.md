@@ -37,6 +37,7 @@ Rebuild and Reopen in Container should create:
 
       $ python manage.py createsuperuser
 
+## API
 -  After create superuser, retrieve the token, passing the body to the request:
 
 [POST]  ```/api/auth-token/```  
@@ -47,9 +48,9 @@ Rebuild and Reopen in Container should create:
     "password"": <password>
 }
 ```
-## API
+
 ### Access API Documentation
-- After building, a swagger page is available at:
+- For further information about all endpoints, afger building, a swagger page will be available at:
 ```
 http://localhost:8000/api/docs/
 ```
