@@ -80,7 +80,18 @@ GET ```/api/movies/family_friendly/?page=<page_number>```
 
 ### 2. Watchlist
 
-Users can add or remove movies to their watchlist by sending a POST request to the following endpoint:
+After create a watchlist for a user:
+
+POST ```/api/watchlists/```
+```
+
+{
+    "user": <user_id>,
+}
+
+```
+
+You can add or remove movies to the watchlist by sending a POST request to the following endpoint:
 
 POST ```/api/watchlists/<list_id>/add_movie/<tmdb_id>```
 
