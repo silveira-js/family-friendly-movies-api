@@ -1,4 +1,4 @@
-# Family Friendly API
+# Family Friendly Movies API
 
 Assists parents in finding suitable movies for children.
 
