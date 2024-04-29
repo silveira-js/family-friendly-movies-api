@@ -50,7 +50,7 @@ Rebuild and Reopen in Container should create:
 ```
 
 ### Access API Documentation
-- For further information about all endpoints, afger building, a swagger page will be available at:
+- For further information about all endpoints, a swagger page will be available at:
 ```
 http://localhost:8000/api/docs/
 ```
