@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  docs:
+    image: family_friendly_api_local_docs
+    container_name: family_friendly_api_local_docs
+    build:
+      context: .
+      dockerfile: ./compose/local/docs/Dockerfile
+    env_file:
+      - ./.envs/.local/.django
+    volumes:
+      - ./docs:/docs:z
+      - ./config:/app/config:z
+      - ./family_friendly_api:/app/family_friendly_api:z
+    ports:
+      - '9000:9000'
+    command: /start-docs
