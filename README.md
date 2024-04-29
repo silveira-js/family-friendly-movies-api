@@ -31,12 +31,15 @@ Rebuild and Reopen in Container should create:
 ## Basic Commands
 
 ### Setting Up Your User
-
+- To connect with the TMDb API, an API KEY is needed and loaded as an environment variable. For practicality, you will find a working key in .envs/.local/.django;
+  
 - To create a **superuser account**, use this command:
 
       $ python manage.py createsuperuser
 
 -  After create superuser, retrieve the token, passing the body to the request:
+
+[POST]  ```/api/auth-token/```  
 
 ```
 {
@@ -44,10 +47,20 @@ Rebuild and Reopen in Container should create:
     "password"": <password>
 }
 ```
+## API
+### Access API Documentation
+- After building, a swagger page is available at:
+```
+http://localhost:8000/api/docs/
+```
 
+### You must add token authorization to every request:  
 
-[POST]  ```/api/auth-token/```  
-
+```
+{
+    "Authorization": "Token <token>"
+}
+```
 
 
 ### Running tests with pytest
